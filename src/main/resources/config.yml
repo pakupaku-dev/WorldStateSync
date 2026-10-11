@@ -1,0 +1,42 @@
+# このファイルを全Paperバックエンドへ配置し、同じMySQLを指定してください。
+# WorldStateSyncはVelocity本体ではなく、Velocity配下の各Paperサーバーに導入します。
+
+server-id: ""
+
+mysql:
+  host: "127.0.0.1"
+  port: 3306
+  database: "minecraft"
+  username: "minecraft"
+  password: "change-me"
+  use-ssl: false
+  allow-public-key-retrieval: true
+  pool-size: 10
+  connection-timeout-millis: 10000
+  table-prefix: "world_state_sync_"
+
+sync:
+  autosave-seconds: 30
+  # DBに現在ワールドのデータがない初回接続時だけ、既存のPaperプレイヤーデータを取り込みます。
+  import-local-on-first-login: true
+  # Velocityでのサーバー移動中は、旧サーバーの保存完了まで新サーバー側で待機します。
+  acquire-timeout-seconds: 45
+  lease-seconds: 20
+  heartbeat-seconds: 5
+  shutdown-timeout-seconds: 15
+
+# キー: 各Paperサーバーに存在する実際のワールド名
+# 値: MySQL上で共有する同期キー
+# 未指定のワールドはワールド名そのものが同期キーになります。
+# 例: server-aの「world」とserver-bの「survival」を同じ状態として扱う場合、
+# server-a: world: "survival-main"
+# server-b: survival: "survival-main"
+world-mappings: {}
+
+messages:
+  loading: "&eプレイヤーデータを読み込んでいます。しばらくお待ちください…"
+  loaded: "&aプレイヤーデータを同期しました。"
+  switching: "&eワールドデータを切り替えています…"
+  database-error: "&cプレイヤーデータの同期に失敗しました。管理者へ連絡してください。"
+  session-timeout: "&c旧サーバーからのデータ保存を確認できませんでした。もう一度接続してください。"
+  session-lost: "&c同期セッションを維持できなかったため切断しました。もう一度接続してください。"

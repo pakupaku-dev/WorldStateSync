@@ -1,0 +1,18 @@
+name: WorldStateSync
+version: ${project.version}
+main: jp.kamei.worldstatesync.WorldStateSyncPlugin
+api-version: '26.2'
+description: MySQLを使用して複数のPaperサーバー間でワールド別の所持品・体力などを同期します
+author: kamei
+
+commands:
+  worldstatesync:
+    description: WorldStateSyncの状態確認と手動保存
+    usage: /worldstatesync <status|saveall>
+    aliases: [worldsync, wss]
+    permission: worldstatesync.admin
+
+permissions:
+  worldstatesync.admin:
+    description: WorldStateSyncの管理コマンドを使用できます
+    default: op
