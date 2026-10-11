@@ -3,7 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>jp.kamei</groupId>
+    <groupId>jp.pakupaku</groupId>
     <artifactId>WorldStateSync</artifactId>
     <version>1.1.0</version>
 
@@ -77,7 +77,7 @@
                             <relocations>
                                 <relocation>
                                     <pattern>com.zaxxer.hikari</pattern>
-                                    <shadedPattern>jp.kamei.worldstatesync.lib.hikari</shadedPattern>
+                                    <shadedPattern>jp.pakupaku.worldstatesync.lib.hikari</shadedPattern>
                                 </relocation>
                             </relocations>
                             <transformers>

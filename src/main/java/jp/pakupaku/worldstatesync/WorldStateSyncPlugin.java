@@ -1,11 +1,11 @@
-package jp.kamei.worldstatesync;
+package jp.pakupaku.worldstatesync;
 
-import jp.kamei.worldstatesync.command.WorldStateSyncCommand;
-import jp.kamei.worldstatesync.config.PluginSettings;
-import jp.kamei.worldstatesync.config.ScopeResolver;
-import jp.kamei.worldstatesync.database.SyncDatabase;
-import jp.kamei.worldstatesync.listener.PlayerSyncListener;
-import jp.kamei.worldstatesync.service.SyncService;
+import jp.pakupaku.worldstatesync.command.WorldStateSyncCommand;
+import jp.pakupaku.worldstatesync.config.PluginSettings;
+import jp.pakupaku.worldstatesync.config.ScopeResolver;
+import jp.pakupaku.worldstatesync.database.SyncDatabase;
+import jp.pakupaku.worldstatesync.listener.PlayerSyncListener;
+import jp.pakupaku.worldstatesync.service.SyncService;
 import org.bukkit.command.PluginCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 

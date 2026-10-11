@@ -1,4 +1,4 @@
-package jp.kamei.worldstatesync.service;
+package jp.pakupaku.worldstatesync.service;
 
 import java.util.UUID;
 import java.util.concurrent.CompletableFuture;

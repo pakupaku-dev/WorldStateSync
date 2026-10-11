@@ -1,7 +1,7 @@
-package jp.kamei.worldstatesync.listener;
+package jp.pakupaku.worldstatesync.listener;
 
-import jp.kamei.worldstatesync.config.ScopeResolver;
-import jp.kamei.worldstatesync.service.SyncService;
+import jp.pakupaku.worldstatesync.config.ScopeResolver;
+import jp.pakupaku.worldstatesync.service.SyncService;
 import org.bukkit.Location;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;

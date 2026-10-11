@@ -1,11 +1,11 @@
-package jp.kamei.worldstatesync.service;
+package jp.pakupaku.worldstatesync.service;
 
-import jp.kamei.worldstatesync.WorldStateSyncPlugin;
-import jp.kamei.worldstatesync.config.PluginSettings;
-import jp.kamei.worldstatesync.config.ScopeResolver;
-import jp.kamei.worldstatesync.database.SyncDatabase;
-import jp.kamei.worldstatesync.model.PlayerState;
-import jp.kamei.worldstatesync.model.StateCodec;
+import jp.pakupaku.worldstatesync.WorldStateSyncPlugin;
+import jp.pakupaku.worldstatesync.config.PluginSettings;
+import jp.pakupaku.worldstatesync.config.ScopeResolver;
+import jp.pakupaku.worldstatesync.database.SyncDatabase;
+import jp.pakupaku.worldstatesync.model.PlayerState;
+import jp.pakupaku.worldstatesync.model.StateCodec;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitTask;
@@ -66,7 +66,7 @@ public final class SyncService {
         }, databaseExecutor).thenAccept(rows -> runMain(() -> {
             for (var row : rows) {
                 try {
-                    String json = jp.kamei.worldstatesync.model.PortalSnapshot.fromState(codec.decode(row.payload()));
+                    String json = jp.pakupaku.worldstatesync.model.PortalSnapshot.fromState(codec.decode(row.payload()));
                     CompletableFuture.runAsync(() -> {
                         try { database.insertPortalBackfill(row, json); }
                         catch (java.sql.SQLException e) { logDatabaseFailure("portal backfill", e); }
@@ -408,14 +408,14 @@ public final class SyncService {
     }
 
     public void recordPlacement(Player player, org.bukkit.Material material) {
-        if (!isBlocked(player)) jp.kamei.worldstatesync.model.PortalSnapshot.recordPlacement(player, material, settings.serverId());
+        if (!isBlocked(player)) jp.pakupaku.worldstatesync.model.PortalSnapshot.recordPlacement(player, material, settings.serverId());
     }
 
     private void publishPortal(Player player) {
         PlayerSession session = sessions.get(player.getUniqueId());
         if (session == null || session.mode != PlayerSession.Mode.ACTIVE || session.activeScope == null) return;
         try {
-            String snapshot = jp.kamei.worldstatesync.model.PortalSnapshot.capture(player, settings.serverId());
+            String snapshot = jp.pakupaku.worldstatesync.model.PortalSnapshot.capture(player, settings.serverId());
             String scope = session.activeScope;
             enqueue(session, () -> database.savePortal(session.playerId, scope, snapshot))
                     .exceptionally(error -> { logDatabaseFailure("portal snapshot for " + session.playerName, error); return false; });

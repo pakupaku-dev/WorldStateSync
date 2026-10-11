@@ -1,7 +1,7 @@
-package jp.kamei.worldstatesync.command;
+package jp.pakupaku.worldstatesync.command;
 
-import jp.kamei.worldstatesync.config.PluginSettings;
-import jp.kamei.worldstatesync.service.SyncService;
+import jp.pakupaku.worldstatesync.config.PluginSettings;
+import jp.pakupaku.worldstatesync.service.SyncService;
 import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;

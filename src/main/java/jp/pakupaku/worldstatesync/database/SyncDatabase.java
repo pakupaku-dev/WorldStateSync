@@ -1,8 +1,8 @@
-package jp.kamei.worldstatesync.database;
+package jp.pakupaku.worldstatesync.database;
 
 import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
-import jp.kamei.worldstatesync.config.PluginSettings;
+import jp.pakupaku.worldstatesync.config.PluginSettings;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -1,4 +1,4 @@
-package jp.kamei.worldstatesync.model;
+package jp.pakupaku.worldstatesync.model;
 
 import com.google.gson.Gson;
 import org.bukkit.Material;

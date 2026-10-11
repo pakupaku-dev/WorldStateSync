@@ -1,4 +1,4 @@
-package jp.kamei.worldstatesync.model;
+package jp.pakupaku.worldstatesync.model;
 
 import org.bukkit.NamespacedKey;
 import org.bukkit.Registry;

@@ -1,4 +1,4 @@
-package jp.kamei.worldstatesync.config;
+package jp.pakupaku.worldstatesync.config;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.serializer.legacy.LegacyComponentSerializer;

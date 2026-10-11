@@ -1,4 +1,4 @@
-package jp.kamei.worldstatesync.config;
+package jp.pakupaku.worldstatesync.config;
 
 import org.bukkit.World;
 

@@ -1,9 +1,9 @@
 name: WorldStateSync
 version: ${project.version}
-main: jp.kamei.worldstatesync.WorldStateSyncPlugin
+main: jp.pakupaku.worldstatesync.WorldStateSyncPlugin
 api-version: '26.2'
 description: MySQLを使用して複数のPaperサーバー間でワールド別の所持品・体力などを同期します
-author: kamei
+author: pakupaku
 
 commands:
   worldstatesync:
